@@ -1,0 +1,6 @@
+.device-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* ... остальные стили ... */
+}
