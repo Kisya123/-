@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кися | Bio-Link</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ВАШ_КОД_FONT_AWESOME.js" crossorigin="anonymous"></script>
+  <style>
+    /* Базовые стили */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      padding: 35px 30px;
+      background: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Аватар */
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2a2a2a;
+      margin-bottom: 25px;
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .avatar:hover {
+      border-color: #555;
+      transform: scale(1.03);
+    }
+
+    /* Текст */
+    h1 {
+      margin: 15px 0;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #e0e0e0, #a0a0a0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      margin-bottom: 30px;
+      opacity: 0.85;
+      font-size: 17px;
+      color: #ccc;
+    }
+
+    /* Ссылки */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .link {
+      background: rgba(30, 30, 30, 0.9);
+      padding: 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 17px;
+    }
+
+    .link:hover {
+      background: rgba(50, 50, 50, 0.7);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      border-color: rgba(100, 100, 100, 0.2);
+    }
+
+    .link i {
+      color: #aaa;
+      transition: color 0.3s;
+    }
+
+    .link:hover i {
+      color: #fff;
+    }
+
+    /* Стили для блока с телефоном */
+    .device-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      padding: 12px 20px;
+      background: rgba(25, 25, 25, 0.7);
+      border-radius: 50px;
+      border: 1px solid rgba(100, 100, 100, 0.2);
+      font-size: 16px;
+      color: #bbb;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+
+    .device-info:hover {
+      background: rgba(35, 35, 35, 0.8);
+      color: #ddd;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .device-info i {
+      color: #a4c639; /* Зеленый цвет для Android */
+      font-size: 20px; /* Немного больше размер */
+      transition: all 0.3s ease;
+    }
+
+    .device-info:hover i {
+      color: #c5e17a; /* Светло-зеленый при наведении */
+      transform: rotate(-10deg); /* Легкий поворот */
+    }
+
+    /* Футер */
+    footer {
+      font-size: 14px;
+      opacity: 0.6;
+      margin-top: 10px;
+      color: #888;
+    }
+
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Анимация появления */
+    .container > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px 20px;
+        border-radius: 14px;
+      }
+      
+      .avatar {
+        width: 110px;
+        height: 110px;
+      }
+      
+      h1 {
+        font-size: 26px;
+      }
+      
+      p {
+        font-size: 16px;
+      }
+      
+      .link {
+        padding: 14px;
+        font-size: 16px;
+      }
+      
+      .device-info {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Аватар -->
+    <img src="avatar.jpg" alt="Фото Киси" class="avatar">
+
+    <!-- Имя -->
+    <h1>Кися</h1>
+
+    <!-- Описание -->
+    <p>Пр</p>
+
+    <!-- Модель телефона с Android-иконкой -->
+    <div class="device-info">
+      <i class="fab fa-android"></i>
+      <span>Infinix note 30 </span>
+    </div>
+
+    <!-- Ссылки -->
+    <div class="links">
+      <a href="https://t.me/bro_p2p" target="_blank" class="link">
+        <i class="fab fa-telegram"></i> Telegram
+      </a>
+      <a href="https://github.com/Kisya123" target="_blank" class="link">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+      © 2025 Кися · 
+      <a href="https://github.com/Kisya123/-">Исходный код</a>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Анимация появления элементов
+      const elements = document.querySelectorAll('.container > *');
+      elements.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0)';
+        }, 300 * (i + 1));
+      });
+      
+      // Дополнительный эффект для аватарки
+      const avatar = document.querySelector('.avatar');
+      if (avatar) {
+        avatar.addEventListener('mouseenter', () => {
+          avatar.style.boxShadow = '0 8px 25px rgba(100, 100, 100, 0.3)';
+        });
+        
+        avatar.addEventListener('mouseleave', () => {
+          avatar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
